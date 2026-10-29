@@ -47,6 +47,8 @@ Built around experimentation with the California Housing dataset, Haven brings t
 | Frontend | HTML, CSS, JavaScript |
 | Model Persistence | Joblib |
 | Deployment | Render |
+| AI Development Assistance | ChatGPT (GPT) |
+
 
 ## 🏗️ Project Structure
 
@@ -216,3 +218,14 @@ Ready to generate a housing value estimate?
   <br />
   <strong>Haven — A clearer view of California housing values.</strong>
 </p>
+
+## 🤝 Development & AI Acknowledgment
+
+Haven was developed with the assistance of **ChatGPT (GPT)** throughout the development process.
+
+ChatGPT helped guide the project across multiple stages, including backend development, frontend implementation, debugging, code refinement, and deployment. The frontend interface was built with ChatGPT's assistance using HTML, CSS, and JavaScript.
+
+The machine learning workflow, model experimentation, feature engineering, evaluation, and integration were developed through an iterative process of learning, experimentation, testing, and AI-assisted problem-solving.
+
+**Haven represents a collaborative development process between human learning and AI assistance**, with ChatGPT serving as a development partner throughout the project.
+
