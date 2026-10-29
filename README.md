@@ -1,34 +1,54 @@
-# Haven — California Housing Price Prediction
+# 🌇 Haven — California Housing Price Prediction
 
-An end-to-end machine learning application that estimates California housing values using **XGBoost**, a custom preprocessing pipeline, and a FastAPI backend with a dedicated web interface.
+**An end-to-end machine learning application that estimates California housing values using XGBoost, a custom preprocessing pipeline, and FastAPI.**
 
-## Overview
+<p align="center">
+  <a href="https://california-housing-2-0.onrender.com/">
+    <img src="https://img.shields.io/badge/🌇_Live_Demo-Explore_Haven-2E8B57?style=for-the-badge" alt="Live Demo" />
+  </a>
+  <a href="https://california-housing-2-0.onrender.com/docs">
+    <img src="https://img.shields.io/badge/API-Documentation-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="API Documentation" />
+  </a>
+  <a href="https://github.com/Aahana-ML/california-housing-2.0">
+    <img src="https://img.shields.io/badge/GitHub-Source_Code-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Repository" />
+  </a>
+</p>
 
-Haven turns district-level housing and geographic information into an estimated property value. The application combines feature engineering, geographic cluster-similarity features, and a trained XGBoost regression model in a single saved pipeline.
+---
 
-This project builds on experimentation with the California Housing dataset and presents the final model through a web application.
+## 🌇 Overview
 
-## Features
+**Haven** turns district-level housing and geographic information into an estimated California housing value.
 
-- XGBoost regression for housing-value prediction
-- Custom feature engineering, including `latlong_ratio` and `room_per_person`
-- Geographic cluster-similarity features
-- Integrated preprocessing and prediction pipeline
-- FastAPI backend with input validation
-- HTML, CSS, and JavaScript frontend
-- JSON prediction responses
-- Model health endpoint
+The application combines custom feature engineering, geographic cluster-similarity features, and a trained XGBoost regression model in a single saved preprocessing and prediction pipeline.
 
-## Tech Stack
+Built around experimentation with the California Housing dataset, Haven brings the final model into an interactive web application backed by a FastAPI API.
 
-- **Language:** Python
-- **Machine learning:** XGBoost, scikit-learn
-- **Data processing:** Pandas, NumPy
-- **Backend:** FastAPI, Uvicorn
-- **Frontend:** HTML, CSS, JavaScript
-- **Model persistence:** Joblib
+## ✨ Features
 
-## Project Structure
+- 🌇 **Housing Value Prediction** — Generate estimated housing values using XGBoost regression.
+- ⚙️ **Custom Feature Engineering** — Create features such as `latlong_ratio` and `room_per_person`.
+- 📍 **Geographic Intelligence** — Incorporate geographic cluster-similarity features.
+- 🔄 **Integrated ML Pipeline** — Keep preprocessing and prediction together in one saved pipeline.
+- 🚀 **FastAPI Backend** — Validate inputs and serve predictions through REST endpoints.
+- 🎨 **Interactive Frontend** — A dedicated interface built with HTML, CSS, and JavaScript.
+- 📦 **JSON Responses** — Return structured prediction results.
+- ❤️ **Health Monitoring** — Check application status and the loaded regression model.
+- ☁️ **Live Deployment** — Access the application online through Render.
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|---|---|
+| Language | Python |
+| Machine Learning | XGBoost, scikit-learn |
+| Data Processing | Pandas, NumPy |
+| Backend & API | FastAPI, Uvicorn |
+| Frontend | HTML, CSS, JavaScript |
+| Model Persistence | Joblib |
+| Deployment | Render |
+
+## 🏗️ Project Structure
 
 ```text
 california-housing-2.0/
@@ -48,30 +68,66 @@ california-housing-2.0/
 └── .gitignore
 ```
 
-## How It Works
+## 🧠 How It Works
+
+```text
+🌇 User enters housing & geographic details
+                    ↓
+          🛡️ FastAPI validates input
+                    ↓
+          ⚙️ Feature engineering
+                    ↓
+       📍 Geographic transformations
+                    ↓
+       🔄 Preprocessing pipeline
+                    ↓
+        🌳 Trained XGBoost model
+                    ↓
+           💰 Housing estimate
+                    ↓
+          🎨 Result on the frontend
+```
 
 1. The user enters district-level housing and geographic details.
 2. FastAPI validates the submitted values.
 3. The saved pipeline performs feature engineering, geographic transformations, imputation, and scaling.
-4. XGBoost generates a housing-value estimate.
+4. The trained XGBoost model generates a housing-value estimate.
 5. The API returns the prediction and its estimated dollar equivalent.
+6. The frontend displays the result to the user.
 
-## Run Locally
+## 📊 Model Evaluation
+
+The trained XGBoost model achieved the following previously recorded results on the held-out test set:
+
+| Metric | Result |
+|---|---:|
+| RMSE | ~0.40057 target units |
+| Dollar-equivalent RMSE | ~$40,057 |
+| R² Score | ~0.8769 |
+
+**Interpretation**
+
+- **RMSE:** The root mean squared prediction error was approximately $40,057 in dollar-equivalent units.
+- **R²:** The model explained approximately 87.69% of the variance in the held-out target values.
+
+These metrics describe performance on the evaluation dataset. They do not guarantee the same accuracy for every individual property.
+
+## 🚀 Run Locally
 
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Aahana-ML/california-housing-2.0.git
 cd california-housing-2.0
 ```
 
-### 2. Create and activate a virtual environment
+### 2. Create a virtual environment
 
 ```bash
 python -m venv .venv
 ```
 
-Windows PowerShell:
+Activate it on Windows PowerShell:
 
 ```powershell
 .venv\Scripts\Activate.ps1
@@ -89,46 +145,74 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-Open `http://127.0.0.1:8000` to use Haven.
+### 5. Open Haven
 
-API documentation is available at `http://127.0.0.1:8000/docs`, and the health endpoint is at `http://127.0.0.1:8000/health`.
+| Resource | URL |
+|---|---|
+| 🌇 Web Application | http://127.0.0.1:8000 |
+| 📘 API Documentation | http://127.0.0.1:8000/docs |
+| ❤️ Health Check | http://127.0.0.1:8000/health |
 
-## API
+## 🔌 API Reference
 
 ### `POST /predict`
 
 Accepts the following input features:
 
-- `MedInc`
-- `HouseAge`
-- `AveRooms`
-- `AveBedrms`
-- `Population`
-- `AveOccup`
-- `Latitude`
-- `Longitude`
+| Feature | Description |
+|---|---|
+| `MedInc` | Median income |
+| `HouseAge` | Median house age |
+| `AveRooms` | Average rooms per household |
+| `AveBedrms` | Average bedrooms per household |
+| `Population` | District population |
+| `AveOccup` | Average household occupancy |
+| `Latitude` | Geographic latitude |
+| `Longitude` | Geographic longitude |
 
-Returns a predicted housing value in units of $100,000 and an estimated dollar value.
+The endpoint returns the predicted value in units of $100,000 and its estimated dollar equivalent.
 
 ### `GET /health`
 
-Reports API health and the loaded regression model type.
+Reports the application's health status and the type of regression model loaded by the API.
 
-## Model Evaluation
+Explore the interactive API documentation:
 
-The trained XGBoost model achieved the following previously recorded held-out test results:
+**[Open Haven API Docs →](https://california-housing-2-0.onrender.com/docs)**
 
-- **RMSE:** approximately `0.40057` target units, equivalent to approximately `$40,057`
-- **R²:** approximately `0.8769`
+## ⚠️ Limitations
 
-These are evaluation results, not a guarantee of accuracy for every individual property. Predictions are estimates based on the dataset and its target definition.
+- The model uses district-level features from the California Housing dataset rather than a property's full address or a live real-estate listing.
+- Predictions are estimates, not formal appraisals or financial advice.
+- Property condition, renovations, recent transactions, and other market factors may influence actual values.
+- Model performance can vary across properties and geographic areas.
 
-## Limitations
+## 🌱 What This Project Demonstrates
 
-- The model uses California Housing dataset features rather than a property's full address, condition, or current market listing.
-- Predictions represent model estimates, not formal appraisals or financial advice.
-- Actual property values can differ from predictions.
+Haven brings together several stages of a machine learning workflow:
 
-## License
+- Data preprocessing and feature engineering
+- Geographic feature construction
+- Regression modeling and evaluation
+- Saving and loading a fitted ML pipeline
+- API development and input validation
+- Frontend-backend integration
+- Deployment of a machine learning application
 
-No license has been selected yet. Add a license if you decide to distribute the project under specific reuse terms.
+## 🌇 Explore Haven
+
+Ready to generate a housing value estimate?
+
+<p align="center">
+  <a href="https://california-housing-2-0.onrender.com/">
+    <img src="https://img.shields.io/badge/Launch_Haven-🌇_Try_the_Live_Demo-2E8B57?style=for-the-badge" alt="Try Haven Live" />
+  </a>
+</p>
+
+---
+
+<p align="center">
+  Built with Python, machine learning, and a little California sunshine. 🌇
+  <br />
+  <strong>Haven — A clearer view of California housing values.</strong>
+</p>
