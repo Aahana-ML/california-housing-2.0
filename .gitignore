@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+
+# Large trained model — stored outside regular Git
+models/california_housing_pipeline.joblib
+models/xgboost_california_housing_pipeline.joblib

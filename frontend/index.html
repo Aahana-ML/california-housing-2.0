@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102b3f">
+<title>Haven | California Home Valuation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script>
+</head>
+<body>
+<div class="topline"></div>
+<header class="site-header">
+<a class="brand" href="/"><span class="brand-mark">H</span><span class="brand-copy"><strong>HAVEN</strong><small>CALIFORNIA PROPERTY INTELLIGENCE</small></span></a>
+<nav class="header-nav"><a href="#how-it-works">How it works</a><a href="#valuation">Valuation</a><span class="live-pill"><i></i> MODEL ONLINE</span></nav>
+</header>
+<main>
+<section class="hero">
+<div class="hero-copy">
+<div class="eyebrow"><span class="eyebrow-line"></span>A MORE INFORMED WAY HOME</div>
+<h1>Find the value<br>behind <em>every address.</em></h1>
+<p class="hero-description">A machine-learning estimate inspired by California housing data. Enter a few property and neighborhood details to explore an estimated value.</p>
+<a class="primary-link" href="#valuation">Estimate a property <span>↗</span></a>
+<div class="hero-footnote"><span class="sparkle">✳</span> Data-led insight. A thoughtful starting point.</div>
+</div>
+<div class="hero-art" role="img" aria-label="Illustration of a modern California home">
+<div class="art-label art-label-top"><span>CALIFORNIA</span><strong>36° 46′ N</strong></div>
+<svg class="house-illustration" viewBox="0 0 640 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8e1d2"/><stop offset="1" stop-color="#c8d5d2"/></linearGradient><linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f7f2e7"/><stop offset="1" stop-color="#d9d0c0"/></linearGradient></defs>
+<rect width="640" height="500" rx="8" fill="url(#sky)"/><circle cx="492" cy="94" r="37" fill="#f8f0d8" opacity=".85"/>
+<path d="M0 334 Q140 248 260 328 T640 292 V500 H0Z" fill="#91a59b"/><path d="M0 375 Q170 307 330 382 T640 354 V500 H0Z" fill="#718b7f"/>
+<path d="M60 412 L60 274 L188 193 L337 274 L337 412Z" fill="#233f4e"/><path d="M38 279 L187 178 L358 279 L340 298 L188 214 L57 301Z" fill="#102b3f"/>
+<path d="M86 280 L188 222 L309 283 L309 412 L86 412Z" fill="url(#wall)"/><path d="M188 222 L309 283 L309 412 L188 412Z" fill="#c5bba8"/>
+<rect x="109" y="299" width="64" height="69" fill="#31586a"/><rect x="117" y="307" width="48" height="53" fill="#aec6c7"/><path d="M141 307 V360 M117 334 H165" stroke="#e7e1d4" stroke-width="4"/>
+<rect x="205" y="287" width="73" height="125" fill="#183444"/><rect x="214" y="297" width="55" height="103" fill="#a9bdb8"/><circle cx="260" cy="355" r="3" fill="#d6b879"/>
+<path d="M337 318 L445 255 L559 315 L559 420 L337 420Z" fill="#e9e1d3"/><path d="M319 317 L444 238 L577 309 L559 327 L444 269 L337 337Z" fill="#183444"/>
+<path d="M360 332 L444 285 L527 332 L527 420 L360 420Z" fill="#c8bda9"/><rect x="380" y="343" width="53" height="47" fill="#31586a"/><rect x="388" y="351" width="37" height="31" fill="#a9c2c3"/><path d="M406 351 V382 M388 366 H425" stroke="#e7e1d4" stroke-width="3"/>
+<rect x="454" y="344" width="48" height="76" fill="#183444"/><rect x="462" y="352" width="32" height="60" fill="#9eb6b6"/>
+<path d="M0 435 Q140 398 256 441 T640 430 V500 H0Z" fill="#496b5c"/>
+<g fill="#294b3d"><circle cx="70" cy="344" r="31"/><circle cx="48" cy="366" r="26"/><circle cx="91" cy="370" r="27"/><circle cx="580" cy="341" r="38"/><circle cx="550" cy="365" r="28"/><circle cx="610" cy="370" r="30"/></g><path d="M0 462 Q150 439 275 470 T640 461 V500 H0Z" fill="#d7d3bd" opacity=".85"/>
+</svg>
+<div class="art-caption"><span class="caption-dot"></span><span>Thoughtful estimates<br><strong>Rooted in data</strong></span><span class="caption-arrow">↗</span></div><div class="art-label art-label-bottom">THE GOLDEN STATE <span>✳</span></div>
+</div>
+</section>
+<section class="trust-strip"><div><span class="strip-number">01</span><span><strong>Machine learning</strong><small>XGBoost regression model</small></span></div><div><span class="strip-number">02</span><span><strong>Location-aware</strong><small>Geographic cluster features</small></span></div><div><span class="strip-number">03</span><span><strong>Instant response</strong><small>Powered by your FastAPI</small></span></div></section>
+<section class="valuation-section" id="valuation">
+<div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span>THE VALUATION STUDIO</div><h2>A clearer view of<br><em>your property's potential.</em></h2></div><p>Tell us about the home and the neighborhood around it. Your trained model will turn those details into an estimate.</p></div>
+<div class="workspace">
+<form id="valuation-form" class="form-card">
+<div class="form-card-header"><div><span class="step-label">PROPERTY PROFILE / 01</span><h3>Tell us about the area</h3></div><span class="form-icon">⌂</span></div>
+<div class="field-grid">
+<label class="field field-wide"><span>Median income <small>in $10,000s</small></span><div class="input-wrap"><span class="input-prefix">$</span><input name="MedInc" type="number" min=".01" step="any" value="8.3252" required><span class="input-suffix">×10k</span></div><small class="field-help">Median household income for the district.</small></label>
+<label class="field"><span>House age <small>years</small></span><div class="input-wrap"><input name="HouseAge" type="number" min="0" max="100" step="any" value="41" required><span class="input-suffix">yrs</span></div></label>
+<label class="field"><span>Average rooms <small>per household</small></span><div class="input-wrap"><input name="AveRooms" type="number" min=".01" step="any" value="6.9841" required></div></label>
+<label class="field"><span>Average bedrooms <small>per household</small></span><div class="input-wrap"><input name="AveBedrms" type="number" min=".01" step="any" value="1.0238" required></div></label>
+<label class="field"><span>Population <small>in district</small></span><div class="input-wrap"><input name="Population" type="number" min=".01" step="any" value="322" required></div></label>
+<label class="field"><span>Average occupancy <small>persons per household</small></span><div class="input-wrap"><input name="AveOccup" type="number" min=".01" step="any" value="2.5556" required></div></label>
+</div>
+<div class="location-divider"><span>LOCATION DETAILS</span><i></i></div>
+<div class="field-grid location-grid">
+<label class="field"><span>Latitude</span><div class="input-wrap"><input name="Latitude" type="number" min="-90" max="90" step="any" value="37.88" required></div></label>
+<label class="field"><span>Longitude</span><div class="input-wrap"><input name="Longitude" type="number" min="-180" max="180" step="any" value="-122.23" required></div></label>
+</div>
+<div class="form-actions"><button class="submit-button" type="submit"><span class="button-text">Generate valuation</span><span class="button-arrow">↗</span></button><button class="reset-button" type="reset">Reset fields</button></div>
+<p class="form-disclaimer">For educational and exploratory use. This model estimate is not a formal appraisal or financial advice.</p>
+</form>
+<aside class="result-card" aria-live="polite">
+<div class="result-topline"><span class="result-indicator"><i></i> MODEL OUTPUT</span><span class="result-number">01 / ESTIMATE</span></div>
+<div class="result-content" id="result-content"><div class="result-ornament">H</div><p class="result-eyebrow">YOUR ESTIMATED VALUE</p><h3 class="result-placeholder">Your estimate<br>starts here.</h3><p class="result-copy">Complete the property profile and generate a valuation to see your model's prediction.</p><div class="result-divider"></div><div class="result-meta"><span>MODEL</span><strong>California Housing · XGBoost</strong></div><div class="result-meta"><span>RESPONSE</span><strong id="result-status">Waiting for input</strong></div></div>
+<div class="result-footer"><span class="footer-star">✳</span><span>Insight for a better-informed next step.</span></div>
+</aside>
+</div>
+</section>
+<section class="how-section" id="how-it-works"><div class="how-heading"><div class="eyebrow"><span class="eyebrow-line"></span>BEHIND THE ESTIMATE</div><h2>Good insight starts<br>with <em>good data.</em></h2></div><div class="how-steps"><article><span>01</span><h3>Describe</h3><p>Enter district-level housing and location details using the original model features.</p></article><article><span>02</span><h3>Transform</h3><p>The trained preprocessing pipeline automatically engineers features and identifies geographic similarities from the property's details.</p></article><article><span>03</span><h3>Estimate</h3><p>Haven uses its trained XGBoost model to generate an estimated California housing value in seconds.</p></article></div></section>
+</main>
+<footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark">H</span><span class="brand-copy"><strong>HAVEN</strong><small>CALIFORNIA PROPERTY INTELLIGENCE</small></span></a><p>Built with machine learning, curiosity, and care.</p><span>EDUCATIONAL PROJECT · 2026</span></footer>
+<div class="toast" id="toast" role="status"></div>
+</body></html>
